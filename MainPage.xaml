@@ -1,0 +1,100 @@
+﻿<Page
+    x:Class="Otrio.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Otrio"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <StackPanel x:Name="Panel">
+
+        <Grid x:Name="Board"
+        Height="300"
+        Background="AliceBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Rectangle x:Name="BoxOne" Tapped="One_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="0" Grid.Row="0" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxTwo" Tapped="Two_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="1" Grid.Row="0" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxThree" Tapped="Three_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="2" Grid.Row="0" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxFour" Tapped="Four_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="0" Grid.Row="1" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxFive" Tapped="Five_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="1" Grid.Row="1" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxSix" Tapped="Six_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="2" Grid.Row="1" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxSeven" Tapped="Seven_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="0" Grid.Row="2" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxEight" Tapped="Eight_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="1" Grid.Row="2" Stroke="Black" StrokeThickness="5"/>
+            <Rectangle x:Name="BoxNine" Tapped="Nine_Tapped" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Fill="Transparent" Grid.Column="2" Grid.Row="2" Stroke="Black" StrokeThickness="5"/>
+
+        </Grid>
+
+        <Grid>
+            <TextBlock x:Name="Prompt" 
+                Text="Please select a ring size."
+                FontSize="20"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Visibility="Collapsed"/>
+            
+            <ComboBox x:Name="PlayerAmount"
+                PlaceholderText="How many players are there?" 
+                FontSize="20"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Visibility="Visible"
+                SelectionChanged="PlayerAmount_SelectionChanged">
+                <x:String>Two</x:String>
+                <x:String>Three</x:String>
+                <x:String>Four</x:String>
+            </ComboBox>
+        </Grid>
+
+        <Grid x:Name="RingGrid"
+
+         Height="100">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="Small" Click="Small_Tapped"  Background="Transparent"
+                BorderBrush="Black" BorderThickness="5" Foreground="Transparent"
+                Grid.Column="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Ellipse Width="20" Height="20" Grid.Column="0" Fill="Transparent"
+                             StrokeThickness="10" Stroke="SteelBlue"/>
+
+            </Button>
+
+            <Button x:Name="Medium" Click="Medium_Tapped" Background="Transparent"
+                BorderBrush="Black" BorderThickness="5" Margin="-5,0,-5,0" 
+                Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Ellipse Width="48" Height="48" Grid.Column="1" Fill="Transparent"
+                             StrokeThickness="10" Stroke="SteelBlue"/>
+            </Button>
+
+            <Button x:Name="Large" Click="Large_Tapped" Background="Transparent" 
+                BorderBrush="Black" BorderThickness="5" 
+                Grid.Column="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <Ellipse Width="80" Height="80" Grid.Column="2" Fill="Transparent" VerticalAlignment="Center"
+                             StrokeThickness="10" Stroke="SteelBlue" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            </Button>
+
+        </Grid>
+
+    </StackPanel>
+
+
+
+
+</Page>
